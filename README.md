@@ -62,64 +62,64 @@ vllm serve meta-llama/Llama-3.1-8B-Instruct --dtype auto --api-key token-abc123 
    - `--resume_from`: The path to a previous run directory to continue from (optional).
    - `--problem_name`: The specific problem name to evaluate (optional).
    - `--local_llm_port`: The port number for the local LLM server (optional).
-
+ 
    Available dataset options include:
-   * `Non-Canonical 3D Geometric Surfaces` (Non-Canonical_3D_Geometric_Surfaces)
+   * `Nonlinear Analytic Composition Surfaces` (Non-Nonlinear_Analytic_Composition_Surfaces)
 
-   * `Piecewise Regime Surfaces` (Piecewise_Regime_Surfaces)
-
-   * `Symbolic–Numeric Composite Surfaces` (Symbolic–Numeric_Composite_Surfaces) 
-
-   * `Hybrid Multi-Modal Symbolic Surfaces` (Hybrid_Multi-Modal_Symbolic_Surfaces) 
+   * `Piecewise-Defined Surfaces` (Piecewise-Defined_Surfaces) 
    
-   * `Procedural & Fractal Surfaces` (Procedural_Fractal_Surfaces)
+   * `Mixed Transcendental Analytic Surfaces` (Mixed_Transcendental_Analytic_Surfaces)
 
-   * `Bio-Inspired Morphological Surfaces` (Bio-Inspired_Morphological_Surfaces)
+   * `Conditional Multi-Regime Surfaces` (Conditional_Multi-Regime_Surfaces)
 
-   * `Complex Composite Surfaces` (Complex_Composite_Surfaces)
+   * `Oscillatory Composite Surfaces` (Oscillatory_Composite_Surfaces)
 
-   * `Tensor Field Surfaces` (Tensor_Field_Surfaces)
+   * `Trigonometric–Exponential Composition Surfaces` (Trigonometric–Exponential_Composition_Surfaces)
 
-   * `Discrete Symbolic Grid Surfaces` (Discrete_Symbolic_Grid_Surfaces)
+   * `Multi-Operator Composite Surfaces` (Multi-Operator_Composite_Surfaces)
 
-   * `Non-Linear Dynamical System Surfaces` (Non-Linear_Dynamical_System_Surfaces)
+   * `Elementary Bivariate Surfaces` (Elementary_Bivariate_Surfaces)
 
-   * `Quantum Inspired Surfaces` (Quantum_Inspired_Surfaces)
+   * `Discrete Integer-Grid Surfaces` (Discrete_Integer-Grid_Surfaces)
 
-   * `Stochastic Process Surfaces` (Stochastic_Process_Surfaces)
+   * `Nonlinear Coupled Surfaces` (Nonlinear_Coupled_Surfaces)
 
-   * `Surrogate-Distilled Symbolic Approximations` (Surrogate-Distilled_Symbolic_Approximations)
+   * `Exponentially-Modulated Trigonometric Surfaces` (Exponentially-Modulated_Trigonometric_Surfaces)
 
-   * `Algebraic Manifolds of Higher Degree` (Algebraic_Manifolds_of_Higher_Degree)
+   * `Localized and Radially-Decaying Surfaces` (Localized_and_Radially-Decaying_Surfaces)
 
-   * `Transformed Coordinate Surfaces` (Transformed_Coordinate_Surfaces)
+   * `Polynomial–Transcendental Mixtures` (Polynomial–Transcendental_Mixtures)
+
+   * `High-Degree Implicit Surfaces` (High-Degree_Implicit_Surfaces)
+
+   * `Parametric Multi-Output Surfaces` (Parametric_Multi-Output_Surfaces)
 
   
-For example, for running discovery methods on all the `Tensor Field Surfaces` datasets with open LLM backbone `Qwen-3-8B` on local server, you can use the following commands:
+For example, for running discovery methods on all the `Elementary Bivariate Surfaces` datasets with open LLM backbone `Qwen-3-8B` on local server, you can use the following commands:
 
 
 LLM-SR:
 
 ```
-python eval.py --dataset "Tensor_Field_Surfaces" --searcher_config configs/llmsr_qwen3-8B.yaml --local_llm_port 10005
+python eval.py --dataset "Elementary_Bivariate_Surfaces" --searcher_config configs/llmsr_qwen3-8B.yaml --local_llm_port 10005
 ```
 
 LaSR:
 
 ```
-python eval.py --dataset "Tensor_Field_Surfaces" --searcher_config configs/lasr_qwen3-8B.yaml --local_llm_port 10005
+python eval.py --dataset "Elementary_Bivariate_Surfaces" --searcher_config configs/lasr_qwen3-8B.yaml --local_llm_port 10005
 ```
 
 SGA method:
 
 ```
-python eval.py --dataset "Tensor_Field_Surfaces" --searcher_config configs/sga_qwen3-8B.yaml --local_llm_port 10005
+python eval.py --dataset "Elementary_Bivariate_Surfaces" --searcher_config configs/sga_qwen3-8B.yaml --local_llm_port 10005
 ```
 
 More evaluation scripts for running discovery methods with different LLM backbones on different datasets are provided in `example_script.sh`. 
 
 The execution of [eval.py](./eval.py) will generate log files in the `logs/` folder. You can resume your run using the `--resume_from <log_dir>` option. For instance, 
-`--resume_from logs/Tensor_Field_Surfaces/Tensor_Field_Surfaces/llmsr-Qwen3-8B/09-20-2025_18-09-19-121210` will bypass already completed problems.
+`--resume_from logs/Elementary_Bivariate_Surfaces/Elementary_Bivariate_Surfaces/llmsr-Qwen3-8B/09-20-2025_18-09-19-121210` will bypass already completed problems.
 
 
 ### Project Structure
@@ -259,16 +259,16 @@ bash scripts.sh
 
 ### 4. Evaluate Results
 
-After OpenEvolve has completed its runs, you can evaluate the performance on different subsets of tasks (e.g., bio, chemical, physics, material). The `eval.py` script collates the results and provides a summary.
+After OpenEvolve has completed its runs, you can evaluate the performance on different subsets of tasks. The `eval.py` script collates the results and provides a summary.
 
 ```bash
 python eval.py <subset_path>
 ```
 
-For example, to evaluate results for the 'Tensor_Field_Surfaces' subset located in `./problems/Tensor_Field_Surfaces/`, you would run:
+For example, to evaluate results for the 'Elementary_Bivariate_Surfaces' subset located in `./problems/Elementary_Bivariate_Surfaces/`, you would run:
 
 ```bash
-python eval.py ./problems/Tensor_Field_Surfaces
+python eval.py ./problems/Elementary_Bivariate_Surfaces
 ```
 
 This script will also save a `JSON` file containing detailed results for your analysis.
@@ -277,7 +277,7 @@ This script will also save a `JSON` file containing detailed results for your an
 ## To Run PySR (Non-LLM Method):
 
 ```
-python eval.py --dataset "Tensor_Field_Surfaces" --searcher_config configs/pysr_explicit.yaml
+python eval.py --dataset "Elementary_Bivariate_Surfaces" --searcher_config configs/pysr_explicit.yaml
 ```
 
 
@@ -285,7 +285,7 @@ python eval.py --dataset "Tensor_Field_Surfaces" --searcher_config configs/pysr_
 
 This repository is licensed under MIT licence.
 
-This work is built on top of other open source projects, including [Openevolve](https://github.com/algorithmicsuperintelligence/openevolve), [LLM-SR](https://github.com/deep-symbolic-mathematics/llm-sr), [LaSR](https://github.com/trishullab/LibraryAugmentedSymbolicRegression.jl), [SGA](https://github.com/PingchuanMa/SGA), and [PySR](https://github.com/MilesCranmer/PySR), and is inspired by the effort behind [LLM-SRBench](https://github.com/deep-symbolic-mathematics/llm-srbench/). We thank the original contributors of these works for open-sourcing their valuable source codes. 
+This work is built on top of other open source projects, including [Openevolve](https://github.com/algorithmicsuperintelligence/openevolve), [LLM-SR](https://github.com/deep-symbolic-mathematics/llm-sr), [LaSR](https://github.com/trishullab/LibraryAugmentedSymbolicRegression.jl), [SGA](https://github.com/PingchuanMa/SGA), and [PySR](https://github.com/MilesCranmer/PySR), and is inspired by the effort behind [LLM-SRBench](https://github.com/deep-symbolic-mathematics/llm-srbench/). We sincerely thank the original contributors of these works for open-sourcing their valuable source codes. 
 
 ## Contact Us
 

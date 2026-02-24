@@ -533,11 +533,11 @@ def create_config(problem: Dict[str, Any], problem_type: str) -> str:
         "target_score": "combined_score",
         "checkpoint_interval": 10,
         "llm": {
-            "primary_model": "gpt-4o-mini",
+            "primary_model": "Qwen/Qwen3-8B-Instruct",
             "primary_model_weight": 0.8,
-            "secondary_model": "gpt-4o-mini",
+            "secondary_model": "Qwen/Qwen3-8B-Instruct",
             "secondary_model_weight": 0.2,
-            "api_base": "https://api.openai.com/v1",
+            "api_base": "https://api.deepinfra.com/v1/openai",
         },
         "prompt": {
             "system_message": system_message,
@@ -680,21 +680,21 @@ def main():
 
     # Define dataset splits and their problem counts
     splits_data = {
-        "Parametric_Equations": 30,
-        "Algebraic Manifolds of Higher Degree": 10,
-        "Bio-Inspired_Morphological_Surfaces": 10,
-        "Complex_Composite_Surfaces": 10,
-        "Discrete_Symbolic_Grid_Surfaces": 10,
-        "Hybrid_Multi-Modal_Symbolic_Surfaces": 10,
-        "Non-Canonical_3D_Geometric_Surfaces": 11,
-        "Piecewise_Regime_Surfaces": 10,
-        "Procedural_Fractal_Surfaces": 10,
-        "Symbolic-Numeric_Composite_Surfaces": 10,
-        "Tensor_Field_Surfaces": 10,
-        "Quantum_Inspired_Surfaces":10,
-        "Nonlinear_Dynamical_System_Surfaces":9,
-        "Stochastic_Process_Surfaces":10,
-        "Surrogate_Distilled_Symbolic_Approximations":9
+        "Nonlinear_Analytic_Composition_Surfaces": 11,
+        "Piecewise-Defined_Surfaces": 10,
+        "Mixed_Transcendental_Analytic_Surfaces": 9,
+        "Conditional_Multi-Regime_Surfaces": 9,
+        "Oscillatory_Composite_Surfaces": 11,
+        "Trigonometric–Exponential_Composition_Surfaces": 10,
+        "Multi-Operator_Composite_Surfaces": 10,
+        "Elementary_Bivariate_Surfaces": 10,
+        "Discrete_Integer-Grid_Surfaces": 10,
+        "Nonlinear_Coupled_Surfaces": 10,
+        "Exponentially-Modulated_Trigonometric_Surfaces": 10,
+        "Localized_and_Radially-Decaying_Surfaces": 10,
+        "Polynomial–Transcendental_Mixtures": 9,
+        "High-Degree_Implicit_Surfaces": 24,
+        "Parametric_Multi-Output_Surfaces": 30
     }
 
     all_tasks = []

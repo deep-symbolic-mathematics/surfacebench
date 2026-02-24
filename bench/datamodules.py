@@ -1,4 +1,3 @@
-# File: bench/datamodules.py
 import h5py
 import numpy as np
 from pathlib import Path
@@ -7,8 +6,8 @@ from huggingface_hub import hf_hub_download
 
 from .data_classes import Equation, Problem, SEDTask
 
-SURFACEBENCH_REPO_ID = "Shobhnik/SurfaceBench"
-SURFACEBENCH_HDF5_FILENAME = "SurfaceBench_Dataset.h5"
+SURFACEBENCH_REPO_ID = "ishobhnik/final"
+SURFACEBENCH_HDF5_FILENAME = "final.h5"
 
 def _download(repo_id, filename):
     """Downloads a specific file from a Hugging Face Hub repo."""
@@ -51,7 +50,7 @@ class SurfaceBenchDataModule:
         dataset_path = Path(_download(repo_id=SURFACEBENCH_REPO_ID, filename=SURFACEBENCH_HDF5_FILENAME))
         
         with h5py.File(dataset_path, "r") as hf:
-            if self.category_name == 'Parametric_Equations' and self.category_name in hf:
+            if self.category_name == 'Parametric_Multi-Output_Surfaces' and self.category_name in hf:
                 category_group = hf[self.category_name]
                 for eq_name in category_group.keys():
                     equation_group = category_group[eq_name]
@@ -104,7 +103,7 @@ class SurfaceBenchDataModule:
             else:
                 raise ValueError(f"Category '{self.category_name}' not found in HDF5 file.")
         
-        print(f"✅ Loaded {len(self.problems)} problems for category '{self.category_name}'.")
+        print(f":white_check_mark: Loaded {len(self.problems)} problems for category '{self.category_name}'.")
         self.name2id = {p.equation_idx: i for i, p in enumerate(self.problems)}
     
     def name(self):
@@ -117,25 +116,25 @@ class SurfaceBenchDataModule:
         return len(self.problems)
 
 SURFACEBENCH_CATEGORIES = [
-                           "Algebraic_Manifolds_of_Higher_Degree",
-                           "Bio-Inspired_Morphological_Surfaces",
-                           "Complex_Composite_Surfaces",
-                           "Discrete_Symbolic_Grid_Surfaces",
-                           "Hybrid_Multi-Modal_Symbolic_Surfaces",
-                           "Non-Canonical_3D_Geometric_Surfaces",
-                           "Piecewise_Regime_Surfaces",
-                           "Procedural_Fractal_Surfaces",
-                           "Symbolic-Numeric_Composite_Surfaces",
-                           "Tensor_Field_Surfaces",
-                           "Quantum_Inspired_Surfaces",
-                           "Nonlinear_Dynamical_System_Surfaces",
-                           "Surrogate_Distilled_Symbolic_Approximations",
-                           "Stochastic_Process_Surfaces",
-                           "Parametric_Equations"
+                           "Nonlinear_Analytic_Composition_Surfaces",
+                           "Piecewise-Defined_Surfaces",
+                           "Mixed_Transcendental_Analytic_Surfaces",
+                           "Conditional_Multi-Regime_Surfaces",
+                           "Oscillatory_Composite_Surfaces",
+                           "Trigonometric–Exponential_Composition_Surfaces",
+                           "Multi-Operator_Composite_Surfaces",
+                           "Elementary_Bivariate_Surfaces",
+                           "Discrete_Integer-Grid_Surfaces",
+                           "Nonlinear_Coupled_Surfaces",
+                           "Exponentially-Modulated_Trigonometric_Surfaces",
+                           "Localized_and_Radially-Decaying_Surfaces",
+                           "Polynomial–Transcendental_Mixtures",
+                           "High-Degree_Implicit_Surfaces",
+                           "Parametric_Multi-Output_Surfaces"
                         ]
 
 def get_datamodule(name, hdf5_path=None):
-    if name == 'Parametric_Equations':
+    if name == 'Parametric_Multi-Output_Surfaces':
         return SurfaceBenchDataModule(category_name=name, hdf5_path=hdf5_path)
     elif name in SURFACEBENCH_CATEGORIES:
         return SurfaceBenchDataModule(category_name=name)

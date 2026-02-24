@@ -13,7 +13,7 @@ for category_dir in "$base_problems_dir"/*/; do
     echo "Processing Category: $category_name"
     echo "----------------------------------------------------"
 
-    if [[ "$category_name" == "Parametric_Equations" ]]; then
+    if [[ "$category_name" == "Parametric_Multi-Output_Surfaces" ]]; then
 
         for equation_dir in "$category_dir"/*/; do
             equation_dir="${equation_dir%/}"
@@ -62,7 +62,7 @@ for category_dir in "$base_problems_dir"/*/; do
             fi
 
             echo "  Launching $category_name - $problem_name"
-            cmd="python ../../openevolve-run.py \"$initial_program_path\" \"$evaluator_path\" --config \"$config_path\" --iterations 1000"
+            cmd="python ../openevolve-run.py \"$initial_program_path\" \"$evaluator_path\" --config \"$config_path\" --iterations 1000"
             eval $cmd &
         done
     fi

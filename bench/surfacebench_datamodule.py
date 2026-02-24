@@ -1,5 +1,3 @@
-# In bench/surfacebench_datamodule.py
-
 from typing import List
 from pathlib import Path
 import numpy as np
