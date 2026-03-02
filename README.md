@@ -289,10 +289,8 @@ kabra2026surfacebench,
 title={{SURFACEBENCH}: A Geometry-Aware Benchmark for Symbolic Surface Discovery},
 author={Sanchit Kabra and Shobhnik Kriplani and Parshin Shojaee and Chandan K. Reddy},
 journal={Transactions on Machine Learning Research},
-issn={2835-8856},
 year={2026},
-url={https://openreview.net/forum?id=sHLTzkczSi},
-note={}
+url={https://openreview.net/forum?id=sHLTzkczSi}
 }
 ```
 
