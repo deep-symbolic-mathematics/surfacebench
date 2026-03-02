@@ -280,6 +280,21 @@ This script will also save a `JSON` file containing detailed results for your an
 python eval.py --dataset "Elementary_Bivariate_Surfaces" --searcher_config configs/pysr_explicit.yaml
 ```
 
+## Citation
+
+If you find this work useful, please cite:
+```bibtex
+@article{
+kabra2026surfacebench,
+title={{SURFACEBENCH}: A Geometry-Aware Benchmark for Symbolic Surface Discovery},
+author={Sanchit Kabra and Shobhnik Kriplani and Parshin Shojaee and Chandan K. Reddy},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2026},
+url={https://openreview.net/forum?id=sHLTzkczSi},
+note={}
+}
+```
 
 ## License
 
